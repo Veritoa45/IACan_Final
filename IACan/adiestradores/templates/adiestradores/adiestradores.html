@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+{% load static %}
+  <main>
+    <form method="get">
+      <label for="q">Ingrese el barrio:</label>
+      <input type="text" id="q" name="q">
+      <button type="submit">Buscar</button>
+    </form>
+  <br>
+    <div id="adiestradores">
+      {% for adiestrador in adiestradores %}
+      <div class="biselado">
+        <div class="encabezado">
+          <h3>{{adiestrador.nombre_a}} {{adiestrador.apellido_a}}</h3>
+          <p>{{adiestrador.descripcion_a}}</p>
+        </div>
+        <div class="orden">
+          <p><b>Contacto: </b>{{adiestrador.contacto_a}}</p>
+          <div class="barrios">
+            <p><b>Barrios: </b></p> 
+            <p>{{adiestrador.barrio1_a}} - {{adiestrador.barrio2_a}} - {{adiestrador.barrio3_a}} - {{adiestrador.barrio4_a}}</p>
+          </div>
+          <div class="puntaje">
+            <p><b>Puntaje: </b>{{adiestrador.puntaje}} de 5</p>
+            <img src="{% static 'core/img/huella.png' %}" alt="huella" id="huella" width="25px">
+          </div>
+          <button class="btn-abrir-modal-{{adiestradores.id}}">Opiniones</button>
+          <dialog class="modal-{{adiestradores.id}}">
+            <ul>
+              <li class="huellas"> {{adiestrador.opinion1}}</li>
+              <li class="huellas"> {{adiestrador.opinion2}}</li>
+              <li class="huellas"> {{adiestrador.opinion3}}</li>
+            </ul>
+            <button class="btn-cerrar-modal-{{adiestradores.id}}">Cerrar</button>
+          </dialog>
+        </div>
+      </div>
+      {% endfor %}
+    </div>  
+      <div class="registro">
+        <a href="{% url 'form1' %}" target="_blank">Si querés publicar hacé click acá</a>
+      </div>
+    </main>
+    <script src="{% static 'core/js/popup.js' %}"></script>
+{% endblock %}

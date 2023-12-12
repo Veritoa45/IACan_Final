@@ -1,0 +1,43 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+{% load static%}
+<main>
+    <form id="contact">
+        <fieldset class="recuadro">
+        <legend>Datos de Contacto</legend>
+        <div class="linea">
+            <label for="nombre">Nombre</label>
+            <input size="20" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre aquí">
+        </div>
+        <br>
+        <div class="linea">
+            <label for="apellido">Apellido</label>
+            <input size="20" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido aquí">    
+        </div>
+        <br>
+        <div class="linea">
+            <label for="mail">Correo Electrónico</label>
+            <input size="50" type="email" name="mail" id="mail" placeholder="ejemplo@mail.com">
+        </div>
+        <br>
+        <div class="linea">
+            <label for="phone">Teléfono</label>
+            <input type="number" name="phone" id="phone" placeholder="Ej 11 5555 5555">
+        </div>
+        <br>
+        <div class="linea">
+        <label for="msjType">Mensaje</label>
+        <br>
+            <textarea id="msjType" cols="30" rows="10" placeholder="Su mensaje"></textarea>
+        </div>
+        </fieldset> 
+        <div id="mensajeError"></div>
+        <div id="mensajeExito"></div>
+        <div>
+            <button type="submit" value="enviar" class="button">Enviar</button>
+        </div>
+    </form>
+</main>
+<script src="{% static 'core/js/validacion_contacto.js' %}"></script>
+{% endblock %}

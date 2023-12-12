@@ -1,0 +1,38 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+{% load static %}
+<main>
+    <div class="grid-container2">
+      <div class="grid-item2">
+        <fieldset class="biselado">
+          <legend>Iniciar sesion</legend>
+          <div class="dato_login">
+            <label for="usuario_login">Usuario:</label>
+            <input size="20" type="text" id="usuario_login" name="usuario_login" placeholder="Ingrese su usuario aquí"/>
+          </div> 
+          <br>
+          <div class="dato_login">
+            <label for="contraseña_login">Contraseña:</label>
+            <input size="30" type="password" id="contraseña_login" name="contraseña_login" placeholder="Ingrese una contraseña aquí"/>
+          </div> 
+          <div class="boton_ingreso">
+            <button type="submit" value="Ingresar" class="ingresar2">Ingresar</button>
+          </div>
+        </fieldset>
+      </div>
+      <div class="grid-item2">
+        <fieldset class="biselado">
+          <legend>¡Registrate aqui!</legend>
+          <div class="registro_alumno">
+            <a href="{% url 'form2' %}"><button class="ingresar2">Alumno</button></a>
+          </div>
+          <br>
+          <div class="registro_adiestrador">
+            <a href="{% url 'form1' %}"><button class="ingresar2">Adiestrador</button></a>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </main>
+{% endblock %}

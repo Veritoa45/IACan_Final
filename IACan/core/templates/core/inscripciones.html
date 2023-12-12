@@ -1,0 +1,200 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+{% load static %}
+<main>
+    <section>
+      <div class="texto">
+        <p>
+          En IACan contamos con un completo curso de educación y adiestramiento canino profesional y certificado
+           por los mejores especialistas y educadores del país.
+        </p>
+        <p> 
+          Aprenderás acerca de la dirección, educación, adiestramiento y manejo de los canes y las técnicas fundamentales 
+          para enseñarles a comportarse de manera adaptativa frente a la sociedad. También tendrás la oportunidad de adiestrar 
+          canes para búsqueda y rescate en situaciones extremas.
+        </p>
+      </div>
+      <div class="video">
+        <video src="{% static 'core/videos/presentacion.mp4' %}" alt="video" width="700px" autoplay="true">
+      </div>
+      <div class="texto">
+        <p>
+          Este curso está dirigido a los profesionales del mundo de la seguridad y medio ambiente, concretamente a 
+          adiestramiento de base y educación canica, dentro del área profesional seguridad y prevención, y a todas aquellas 
+          personas interesadas en adquirir conocimientos relacionados con el adiestramiento del perro sus técnicas de 
+          aprendizaje y modificación de conductas no deseadas.
+        </p>
+        <p>
+          El objetivo de la formación es que salgan capacitados para reconocer cualquier problema de conducta y poder 
+          modificarlo, pudiendo trabajar de manera online o presencial según se adapte al caso.
+        </p>
+      </div>
+    </section>
+    <section>
+      <h2>Nuestros Entrenadores</h2>
+      <div class="box">
+        <div class="card_box">
+          <div class="card">    
+            <div class="frente">
+              <img src="{% static 'core/img/entrenador1.jpg' %}">
+            </div>
+            <div class="dorso">
+              <h4>Gastón Mencia:</h4>
+              <p>
+                Médico veterinario experto en comportamiento canino y adiestramiento de canes de compañía. Más de 10 años de 
+                experiencia entrenando perros guías y acompañantes terapéuticos.
+              </p>
+            </div>
+          </div>      
+        </div>
+        <div class="card_box">
+          <div class="card">    
+            <div class="frente">
+              <img src="{% static 'core/img/entrenador2.jpg' %}">
+            </div>
+            <div class="dorso">
+              <h4>César Morales:</h4>
+              <p>
+                Experto en el método de adiestramiento canino cognitivo-emocional.
+                Es entrenador de canes de la policía por más
+                de 12 años.
+              </p>
+            </div>    
+          </div>
+        </div>
+        <div class="card_box">
+          <div class="card">    
+            <div class="frente">
+              <img src="{% static 'core/img/entrenadora3.jpg' %}">
+            </div>
+            <div class="dorso">
+              <h4>Mía Iida:</h4>
+              <p>
+                Médica veterinaria experta en adiestramiento de canes para búsqueda y rescate en condiciones climáticas
+                adversas. Más de 15 años de experiencia en reconocidas instituciones europeas.
+              </p>
+            </div>    
+          </div>
+        </div>  
+        <div class="card_box">
+          <div class="card">    
+            <div class="frente">
+              <img src="{% static 'core/img/entrenadora4.jpg' %}">
+            </div>
+            <div class="dorso">
+              <h4>Pilar Estévez:</h4>
+              <p>
+                Psicóloga canina y médica veterinaria. Especialista en entrenamiento de canes para rescate de rehenes y 
+                personas en lugares inhóspitos.
+              </p>
+            </div>    
+          </div>
+        </div>
+        <div class="card_box">
+          <div class="card">    
+            <div class="frente">
+              <img src="{% static 'core/img/entrenador5.jpg' %}">
+            </div>
+            <div class="dorso">
+              <h4>Tiago Fernández:</h4>
+              <p>
+                Experto en adiestramiento canino cognitivo-emocional. Más de 10 años de experiencia entrenando canes para 
+                la policía federal.
+              </p>
+            </div>    
+          </div>
+        </div>
+        <div class="card_box">
+          <div class="card">    
+            <div class="frente">
+              <img src="{% static 'core/img/entrenadora6.jpg' %}">
+            </div>
+            <div class="dorso">
+              <h4>Monique Da Silva:</h4>
+              <p>
+                Médica veterinaria y psicóloga canina. Experta en adiestramiento de canes de compañía terapéutica.
+              </p>
+            </div>    
+          </div>
+        </div>
+      </div> 
+    </section>
+    <section>
+      <div class="grupo">
+        <div class="boton">
+          <a href="{% url 'form2' %}" target="_blank">Inscribite</a>
+        </div>
+        <div class="boton">
+          <a href="{% static 'core/archivos/Plan de Estudios.pdf' %}" download>Plan de Estudios</a>
+        </div>
+      </div>
+    </section>  
+    <h2>Opiniones de nuestros alumnos</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <h3>Germán Ovejeiro</h3>
+          <p>
+            Es el segundo curso que hago en este lugar, todos los instructores son excelentes y estan en todos los detalles. 
+            Los recomiendo.
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <h3>Ana Maria Maltes</h3>
+          <p>
+            Tengo 20 años en esta profesión pero quise formalizar mis estudios para darle más valor a mi marca personal. 
+            Definitivamente hice la mejor elección viniendo a IACan
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <h3>Pastor Belgman</h3>
+          <p>
+            IACan me ha permitido poder responder a las exigencias actuales de mis clientes y poder brindarles lo mejor a nuestros 
+            mejores amigos cuadrúpedos.
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <h3>Laura Beagle</h3>
+          <p>
+            Formar un can como acompañante es una gran responsabilidad. El instituto no solo me ha permitido dedicarme a esta 
+            hermosa profesión de manera responsable, sino que tambien crea el sentimiento de compromiso con su compañero humano 
+            en cada uno de los perros con los que se trabaja. Gracias IACan!
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <h3>Jorgelina Doberminsky</h3>
+          <p>
+            Estoy muy agradecida con IACan por todo lo aprendido. Se nota su calidez y amor por los perros en cada una de sus clases.
+          </p>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+  {% block javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      console.log('Swiper initialized');
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          1280: {
+            slidesPerView: 3,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          320: {
+            slidesPerView: 1,
+          }
+        },
+      });
+    </script>
+  {% endblock%}
+{% endblock %}

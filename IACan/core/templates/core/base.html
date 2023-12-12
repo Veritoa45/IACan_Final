@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %} {% endblock %}IACan</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'core/img/ico/IACan-Favicon.ico' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
+  </head>
+  <body style="background-image: url('{% static 'core/img/Fondo.jpg' %}')">
+    <header>
+      <div class="contenedor">
+        <img src="{% static 'core/img/IACan Logo.png' %}" alt="Logo" class="logo-style" />
+        <h1>Instituto de Adiestramiento Canino</h1>
+        <a href="{% url 'login' %}"><img src="{% static 'core/img/inicio.png' %}" alt="inicio" id="inicio"/></a>
+      </div>
+      <button id="abrir" class="abrir-menu"><img src="{% static 'core/img/menu.png' %}" alt=""></button>
+      <nav class="nav" id="nav"> 
+        <button id="cerrar" class="cerrar-menu"><img src="{% static 'core/img/cerrar.png' %}" alt=""></button>
+        <ul>
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="{% url 'inscripciones' %}" target="_self">Inscribite</a></li>
+          <li><a href="{% url 'adiestradores' %}" target="_self">Adiestradores</a></li>
+          <li><a href="{% url 'contacto' %}" target="_blank">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+      <div class="datos">
+        <h3>Contactanos</h3>
+        <p>Lavalle 1334 - CABA</p>
+        <p><i>consultas@iacan.com</i></p>
+      </div>
+      <div class="links">
+        <a href="{% static 'core/archivos/Plan de Estudios.pdf' %}" download>Plan de Estudios</a>
+        <a href="{% url 'adiestradores' %}">Adiestradores</a>
+        <a href="{% url 'contacto' %}" target="_blank">Contacto</a>
+      </div>
+      <div class="red">
+        <h4>Nuestras Redes Sociales</h4>
+        <div>
+          <a href="#"><img src="{% static 'core/img/whatsapp.png' %}" alt="whatsapp"></a>
+          <a href="#"><img src="{% static 'core/img/facebook.png' %}" alt="facebook"></a>
+          <a href="#"><img src="{% static 'core/img/instagram.png' %}" alt="instagram"></a>
+          <a href="#"><img src="{% static 'core/img/twitter.png' %}" alt="twitter"></a>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'core/js/menuresponsive.js' %}"></script>
+  </body>
+</html>
