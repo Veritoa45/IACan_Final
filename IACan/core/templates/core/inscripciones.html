@@ -131,6 +131,7 @@
       </div>
     </section>  
     <h2>Opiniones de nuestros alumnos</h2>
+    <section>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -171,11 +172,11 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
+  </section>
   </main>
   {% block javascript %}
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-      console.log('Swiper initialized');
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -197,4 +198,5 @@
       });
     </script>
   {% endblock%}
+
 {% endblock %}

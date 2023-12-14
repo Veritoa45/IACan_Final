@@ -1,14 +1,13 @@
 from django.db import models
 
 class Adiestrador(models.Model):
-    id = models.AutoField(primary_key=True)
     usuario_a = models.CharField(max_length=30)
-    password_a = models.CharField(max_length=10)
+    contraseña_a = models.CharField(max_length=10)
     nombre_a = models.CharField(max_length=100)
     apellido_a = models.CharField(max_length=100)
     descripcion_a = models.TextField(max_length=200)
-    telefono_a = models.IntegerField()
-    mail_a = models.CharField(blank= True, null=True, max_length=50)
+    telefono_a = models.PositiveIntegerField()
+    mail_a = models.EmailField(blank= True, null=True, max_length=50)
     barrio1_a = models.CharField(max_length=30)
     barrio2_a = models.CharField(max_length=30) 
     barrio3_a = models.CharField(max_length=30)

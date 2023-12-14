@@ -1,45 +1,28 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Adiestrador
 from .forms import FormularioAdiestrador
 from django.db.models import Q
-from django.contrib import messages
+from django.http import HttpResponse
 
 # Create your views here.
 def form1(request):
-    formularioAdiestrador = FormularioAdiestrador()
-    return render(request, "adiestradores/form1.html", {'formularioAdiestrador': formularioAdiestrador})
-
-def procesar_formAd(request):
     if request.method == 'POST':
-        formularioAdiestrador = FormularioAdiestrador(request.POST)
-        if formularioAdiestrador.is_valid():
-            formularioAdiestrador.save()
-            messages.success(request, 'El usuario se ha registrado con éxito.')
-            print("Datos guardados exitosamente")  # Agregar un mensaje de confirmación en la consola
+        form = FormularioAdiestrador(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'El usuario se ha registrado con éxito')
             return redirect('form1')
-        else:
-            print(formularioAdiestrador.errors)
-            print("El formulario no es válido, no se guardaron los datos")  # Agregar un mensaje de error en la consola
-    else:
-        formularioAdiestrador = FormularioAdiestrador()
-    return render(request, "adiestradores/form1.html", {'formularioAdiestrador': formularioAdiestrador})
-
-def adiestradores(request):
-    adiestradores = Adiestrador.objects.all()
-    return render(request, "adiestradores/adiestradores.html", {'adiestradores': adiestradores})
-
-def search_view(request):
-    query = request.GET.get('q')
-    adiestradores = Adiestrador.objects.all()
-
-    if query:
-        adiestradores = adiestradores.filter(
-            Q(barrio1_a__icontains=query) |
-            Q(barrio2_a__icontains=query) |
-            Q(barrio3_a__icontains=query) |
-            Q(barrio4_a__icontains=query) |
-            Q(barrio5_a__icontains=query) 
-        )
-        print("Adiestradores filtrados:", adiestradores)  # Impresión para verificar los adiestradores filtrados
+    else: 
+        form = FormularioAdiestrador()
+    return render(request, 'adiestradores/form1.html', {'form': form})
         
-    return render(request, 'adiestradores/adiestradores.html', {'adiestradores': adiestradores})
+def adiestradores(request):
+
+    barrio_filter = request.GET.get('barrio', None)
+    adiestradores = Adiestrador.objects.all()
+    if barrio_filter:
+        adiestradores = adiestradores.filter(Q(barrio1_a=barrio_filter) | Q(barrio2_a=barrio_filter) | Q(barrio3_a=barrio_filter) | Q(barrio4_a=barrio_filter)| Q(barrio5_a=barrio_filter))
+    context = {'adiestradores': adiestradores}
+    return render(request, 'adiestradores/adiestradores.html', context)
+

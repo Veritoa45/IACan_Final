@@ -417,6 +417,27 @@ h2 {
     justify-content: space-around;
 }
 
+.filtro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.botton {
+    width: 100px;
+    height: 30px;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(215, 189, 226);
+    border: 3px solid;
+    border-color: rgb(125, 60, 152);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .biselado {
     padding: 20px;
 	border: 2px solid rgb(254, 176, 176);
@@ -729,15 +750,17 @@ input#usuario_login, input#contraseña_login {
     padding: 10px;
 }
 
-[class^=alert-] {
-    display: block;
-    color: rgb(4, 192, 4);
-    font-weight: bold;
-    border: 3px solid rgb(4, 192, 4);
-    width: 350px;
-    margin: auto;
-    background-color: rgb(203, 251, 203);
+.alert {
     padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
 }
 
 /*-------------------------------------------------------------------------*/
@@ -1179,6 +1202,30 @@ input#usuario_login, input#contraseña_login {
     }
 
     /*Form Adiestradores*/
+
+    #filtro {
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .boton {
+        color: black;
+        font-size: 25px;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(215, 189, 226);
+        border: 3px solid;
+        border-color: rgb(125, 60, 152);
+        border-radius: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+        margin: 40px;
+    }
 
     #form_adiest{
         width: 90%;

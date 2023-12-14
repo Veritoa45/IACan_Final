@@ -23,24 +23,24 @@ window.addEventListener('load', () => {
                 ubicacion.textContent = data.name
                 switch(data.weather[0].main) {
                     case 'Thunderstore':
-                        iconoAnimado.src='../img/clima/thunder.svg'
+                        iconoAnimado.src='{% static "core/img/clima/thunder.svg" %}'
                         break;    
                     case 'Drizzle':
-                        iconoAnimado.src='../img/clima/rainy-2.svg'
+                        iconoAnimado.src='{% static "core/img/clima/rainy-2.svg" %}'
                         break;
                     case 'Rain':
-                        iconoAnimado.src='../img/clima/rainy-7.svg'
+                        iconoAnimado.src='{% static "core/img/clima/rainy-7.svg" %}'
                         break;    
                     case 'Snow':
-                        iconoAnimado.src='../img/clima/snowy-6.svg'
+                        iconoAnimado.src='{% static "core/img/clima/snowy-6.svg" %}'
                     case 'Clear':
-                        iconoAnimado.src = '../img/clima/day.svg'
+                        iconoAnimado.src = '{% static "core/img/clima/day.svg" %}'
                         break;
                     case 'Atmosphere':
-                        iconoAnimado.src = '../img/clima/weather.svg'
+                        iconoAnimado.src = '{% static "core/img/clima/weather.svg" %}'
                         break;
                     case 'Clouds':
-                        iconoAnimado.src = '../img/clima/cloudy-day-1.svg'
+                        iconoAnimado.src = '{% static "core/img/clima/cloudy-day-1.svg" %}'
                         break;
                    }
 
