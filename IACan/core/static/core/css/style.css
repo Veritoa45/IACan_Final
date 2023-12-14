@@ -438,6 +438,11 @@ h2 {
     cursor: pointer;
 }
 
+select {
+    width: 200px;
+    background-color: rgb(254, 210, 210);
+}
+
 .biselado {
     padding: 20px;
 	border: 2px solid rgb(254, 176, 176);
